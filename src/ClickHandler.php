@@ -75,8 +75,6 @@ class ClickHandler extends ExceptionHandler
             $category = 'invalid_request';
             $code = 'invalid_credentials';
             $message = $exception->getMessage();
-        } else {
-            dd(get_class($exception));
         }
 
         $responseBody = [
