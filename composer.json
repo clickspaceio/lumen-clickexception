@@ -27,12 +27,12 @@
   },
   "autoload": {
     "psr-4": {
-      "Clickspace\\AdvancedRequest\\": "src/"
+      "Clickspace\\ClickException\\": "src/"
     }
   },
   "autoload-dev": {
     "psr-4": {
-      "Clickspace\\AdvancedRequest\\Test\\": "tests/"
+      "Clickspace\\ClickException\\Test\\": "tests/"
     }
   },
   "scripts": {
