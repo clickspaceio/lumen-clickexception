@@ -10,13 +10,13 @@ class CustomClickException extends \Exception
     public $message;
     public $httpCode;
 
-    public function __construct($category, $code, $message = "", $httpCode = 500)
+    public function __construct($category, $code, $message = "", $httpCode = 500, $previous = null)
     {
         $this->category = $category;
         $this->code = $code;
         $this->message = $message;
         $this->httpCode = $httpCode;
-        parent::__construct($message, $httpCode, null);
+        parent::__construct($message, $httpCode, $previous);
     }
 
 }
