@@ -58,7 +58,12 @@ class ClickHandler extends ExceptionHandler
         $message = 'There was an internal processing error.';
         $responseCode = $rendered->getStatusCode();
 
-        if ($exception instanceof ModelNotFoundException) {
+        if ($exception instanceof CustomClickException) {
+            $category = $exception->category;
+            $code = $exception->code;
+            $message = $exception->message;
+            $responseCode = $exception->httpCode;
+        } elseif ($exception instanceof ModelNotFoundException) {
             $category = 'not_found';
             $code = 'resource_not_found';
             $message = 'The requested resource (' . str_replace('App\Models\\', '', $exception->getModel()) . ') does not exist or has been deleted.';
